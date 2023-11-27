@@ -1,0 +1,6 @@
+--- Set the RESUME variable to override this in Ubuntu(durante o upgrade)
+passo 1: sudo blkid | awk -F\" '/swap/ {print $2}'
+passo 2:  printf "RESUME=UUID=$(blkid | awk -F\" '/swap/ {print $2}')\n" | sudo tee     /etc/initramfs-tools/conf.d/resume
+passo 3: sudo update-initramfs -u -k all
+passo 4: sudo dpkg --configure -a
+passo 5: reiniciar o OS e rodar o 'sudo apt-get upgrade' novamente para ver se está funcionando normalmente.
