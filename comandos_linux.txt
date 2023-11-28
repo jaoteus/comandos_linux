@@ -1,0 +1,2 @@
+ls --> listas arquivos e diretórios não ocultos.
+ls -a --> listas todos os diretorios e arquivos, até mesmo os que estão ocultos.
